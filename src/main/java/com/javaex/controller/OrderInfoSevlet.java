@@ -178,7 +178,7 @@ public class OrderInfoSevlet extends HttpServlet {
 			WebUtil.forward(request, response, "/WEB-INF/views/order/orderform.jsp");
 			
 		} else if("managelist".equals(actionName)) {
-			// 미현이가 한 부분!! 기본 관리자 페이지에서 주문 내역 관리로 넘어갈 때!!!!
+			// 기본 관리자 페이지에서 주문 내역 관리로 넘어갈 때!!!!
 			OrderInfoDao dao = new OrderInfoDaoImpl();
 			ArrayList<OrderInfoVo> list = dao.getList();
 			System.out.println("리스트 가져옴");
@@ -187,7 +187,7 @@ public class OrderInfoSevlet extends HttpServlet {
 
 			WebUtil.forward(request, response, "/WEB-INF/views/manager/orderinfomanage.jsp");
 		} else if("before".equals(actionName)) {
-			// 미현이가 한 부분!! 기본 관리자 페이지에서 주문 내역 관리로 넘어갈 때!!!!
+			// 기본 관리자 페이지에서 주문 내역 관리로 넘어갈 때!!!!
 			OrderInfoDao dao = new OrderInfoDaoImpl();
 			ArrayList<OrderInfoVo> list = dao.getList1();
 			System.out.println("리스트 가져옴");
@@ -198,7 +198,7 @@ public class OrderInfoSevlet extends HttpServlet {
 
 			WebUtil.forward(request, response, "/WEB-INF/views/manager/orderinfomanage2.jsp");
 		} else if("after".equals(actionName)) {
-			// 미현이가 한 부분!! 기본 관리자 페이지에서 주문 내역 관리로 넘어갈 때!!!!
+			// 기본 관리자 페이지에서 주문 내역 관리로 넘어갈 때!!!!
 			OrderInfoDao dao = new OrderInfoDaoImpl();
 			ArrayList<OrderInfoVo> list = dao.getList2();
 			System.out.println("리스트 가져옴");
@@ -300,7 +300,7 @@ public class OrderInfoSevlet extends HttpServlet {
 		if (pnt > 0) {
 			PointDaoImpl pDao = new PointDaoImpl();
 			pDao.insertProcess(memNo, pnt, "포인트로 결제");
-			System.out.println("시발시발시발");
+			
 		}
 		OrderInfoVo vo = new OrderInfoVo(total, memNo);
 		OrderInfoDao dao = new OrderInfoDaoImpl();
@@ -446,7 +446,7 @@ public class OrderInfoSevlet extends HttpServlet {
 		if(pnt > 0) {
 			PointDaoImpl pDao = new PointDaoImpl();
 			pDao.insertProcess(memNo, pnt, "포인트로 결제");
-			System.out.println("시발시발시발");
+			
 		}
 		OrderInfoVo vo = new OrderInfoVo(total, memNo);
 		OrderInfoDao dao = new OrderInfoDaoImpl();

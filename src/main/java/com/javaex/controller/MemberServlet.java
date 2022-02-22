@@ -117,9 +117,7 @@ public class MemberServlet extends HttpServlet {
 		
 
 		} else if ("idcheck".equals(actionName)) {
-			// 이게 만약에 회원가입할 때 아이디 중복 체크하는 부분이면 나는 서블릿에서 안하고 거
-			// 폴더 중에서 api 에 idcheck에서 하는데.. 그래서 나는 이걸 안쓰긴 하는데
-			// 우선은 그냥 둬도 문제는 없을 것 같은뎀..!
+			
 			String memId = request.getParameter("memId");
 			MemberDao dao = new MemberDaoImpl();
 
@@ -204,7 +202,7 @@ public class MemberServlet extends HttpServlet {
 			}
 
 		} else if ("orderlist".equals(actionName)) {
-			// 이렇게 조금 차이나도 기능은 같은 걸 하니까 그냥 장기석 껄로!!
+			// orderlist 로
 
 			MemberVo authUser = getAuthUser(request);
 			int no = Integer.parseInt(request.getParameter("memNo"));
@@ -225,7 +223,7 @@ public class MemberServlet extends HttpServlet {
 		} else if ("modify".equals(actionName)) {
 
 			System.out.println("actionName => " + actionName);
-			// 아마 이제 여기서도 폰 부분 세가지로 받아와야 할 듯 그래도 이건 언늬도 잘 아니까! 울 언느ㅣ 짱 멋있댜
+			// 멤버 수정 부분
 			String memName = request.getParameter("memName");
 			String memPhone = request.getParameter("memPhone");
 
@@ -347,7 +345,7 @@ public class MemberServlet extends HttpServlet {
 
 			WebUtil.forward(request, response, "/WEB-INF/views/member/pointform.jsp");
 
-			// 여기서 부터는 장기석꺼 에서 추가 하는거?! 장기석 꺼 말고 언니 꺼에는 아마 mainup 말고는 있을꺼야! maybe?! >x<
+			
 		} else if ("mainup".equals(actionName)) {
 			// 처음 서버 접속하고 뜨는 이벤트 팝업
 			WebUtil.forward(request, response, "/WEB-INF/views/main/event.jsp");
